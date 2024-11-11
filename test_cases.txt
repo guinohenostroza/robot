@@ -1,0 +1,17 @@
+*** Test Cases ***
+Agrega Producto al Carrito y Valida Precio
+    [Documentation]    Valida que el precio de un producto Gear->Bags se reflejen correctamente en el carrito.
+    # Paso 1: Navegar a la página del producto
+
+   
+    # Paso 2: Obtener el precio del producto en la página de detalles
+
+
+    # Paso 3: Agregar el producto al carrito
+
+
+    # Paso 4: Navegar al carrito
+  
+
+    # Paso 5: Validar que el precio en el carrito coincide con el precio del producto
+  

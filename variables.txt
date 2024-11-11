@@ -1,0 +1,4 @@
+*** Variables ***
+${URL}            https://magento.softwaretestingboard.com/
+${PRODUCT_URL}    ${URL}/driven-backpack.html   # URL específica del producto
+${CART_URL}       ${URL}/checkout/cart

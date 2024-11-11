@@ -1,0 +1,25 @@
+*** Keywords ***
+Launch Browser
+    Open Browser  ${URL}    Chrome
+    Maximize Browser Window
+
+Go To Product Page
+    [Arguments]    ${product_url}
+    Go To    ${product_url}
+
+Get Product Price
+    ${price}=    Get Text    xpath=//*[@class="price-wrapper "]/span   # Cambiar al selector adecuado
+    RETURN    ${price}
+
+Add Product To Cart
+    Click Button    xpath=//button[@title="Add to Cart"]    # Cambiar al selector adecuado
+    Wait Until Page Contains Element    xpath=//a[contains(@class, "viewcart")]    # Espera hasta ver el link del carrito
+
+Go To Cart
+    Go To    ${CART_URL}
+    Wait Until Page Contains Element    xpath=//div[contains(@class, "cart-totals")]    # Espera que el carrito cargue
+
+Validate Product Price In Cart
+    [Arguments]    ${expected_price}
+    ${cart_price}=    Get Text    xpath=//*[@class="cart-price"]/span    # Cambiar al selector adecuado en el carrito
+    Should Be Equal    ${expected_price}    ${cart_price}    Precio en el carrito no coincide con el esperado

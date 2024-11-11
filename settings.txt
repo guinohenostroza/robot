@@ -1,0 +1,4 @@
+*** Settings ***
+Library   SeleniumLibrary
+Suite Setup       Launch Browser
+Suite Teardown    Close Browser
